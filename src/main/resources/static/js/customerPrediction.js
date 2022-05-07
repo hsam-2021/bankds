@@ -41,8 +41,62 @@ $(document).ready(function() {
 						img:"success.svg",
 					}).then((e) => {
 						if(e == "confirm"){
-							alert("Thanks!! Data Saved successfully");	
-							location.reload();
+							var customerPredictionDataPersist = {
+									job : $("#job").val(),
+									marital_status : $("#marital_status").val(),
+									education : $("#education").val(),
+									contact : $("#contact").val(),
+									month : $("#month").val(),
+									poutcome : $("#poutcome").val(),
+									age : $("#age").val(),
+									balance : $("#balance").val(),
+									day : $("#day").val(),
+									duration : $("#duration").val(),
+									campaign : $("#campaign").val(),
+									previous : $("#previous").val(),
+									housing : $("#housing").val(),
+									loan : $("#loan").val(),
+									deposit : predictionData
+								};
+							
+							
+							$
+							.ajax(
+									{
+										url : '/customer/v1/createPredictionRecord',
+										type : 'POST',
+										data : JSON
+												.stringify(customerPredictionDataPersist),
+										contentType : 'application/json; charset=utf-8',
+										beforeSend : function(
+												xhr) {
+											$(
+													"#loaderDiv")
+													.show();
+											
+										},
+										statusCode : {
+											200 : function() {
+												    alert('Customer Data Saved Successfully');
+													$("#loaderDiv").hide();
+													location.reload();
+											}
+										}
+									})
+							.fail(
+									function(
+											xhr,
+											result,
+											status) {
+										alert('Error saving customer Data');
+										if (xhr.status != 200) {
+											$(
+													"#loaderDiv")
+													.hide();
+										}
+										location.reload();
+									});
+						
 						}else{
 							location.reload();
 						}
