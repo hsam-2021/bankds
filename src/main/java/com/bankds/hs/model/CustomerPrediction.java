@@ -12,7 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "hs_customer_prediction ", schema = "public")
+@Table(name = "hs_customer_prediction", schema = "public")
 @NamedQuery(name = "CustomerPrediction.findAll", query = "SELECT g FROM CustomerPrediction g")
 public class CustomerPrediction implements Serializable {
 	private static final long serialVersionUID = 1L;
