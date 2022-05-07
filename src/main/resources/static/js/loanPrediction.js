@@ -36,8 +36,59 @@ $(document).ready(function() {
 						img:"success.svg",
 					}).then((e) => {
 						if(e == "confirm"){
-							alert("Thanks!! Data Saved successfully");	
-							location.reload();
+
+
+							var loanPredictionDataPersist = {
+									gender : $("#gender").val(),
+									married : $("#married").val(),
+									dependent : parseInt($("#dependent").val()),
+									education : $("#education").val(),
+									selfEmployed : $("#selfEmployed").val(),
+									creditHistory : parseInt($("#creditHistory").val()),
+									propertyArea : $("#propertyArea").val(),
+									applicantIncome : parseInt($("#applicantIncome").val()),
+									coApplicantIncome : parseInt($("#coApplicantIncome").val()),
+									loanAmount : parseInt($("#loanAmount").val()),
+									loanAmountTerm : parseInt($("#loanAmountTerm").val()),
+									loanStatus : predictionData
+								};
+							
+							$
+							.ajax(
+									{
+										url : '/customer/v1/createLoanPredictionRecord',
+										type : 'POST',
+										data : JSON
+												.stringify(loanPredictionDataPersist),
+										contentType : 'application/json; charset=utf-8',
+										beforeSend : function(
+												xhr) {
+											$(
+													"#loaderDiv")
+													.show();
+											
+										},
+										statusCode : {
+											200 : function() {
+												    alert('Loan Data Saved Successfully');
+													$("#loaderDiv").hide();
+													location.reload();
+											}
+										}
+									})
+							.fail(
+									function(
+											xhr,
+											result,
+											status) {
+										alert('Error saving Loan Data');
+										if (xhr.status != 200) {
+											$(
+													"#loaderDiv")
+													.hide();
+										}
+										location.reload();
+									});
 						}else{
 							location.reload();
 						}
