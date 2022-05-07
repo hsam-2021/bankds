@@ -1,0 +1,77 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.zebra.com/pm/domainobjects/services"
+	xmlns:tns="http://www.zebra.com/pm/domainobjects/services"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" jaxb:version="2.0"
+	elementFormDefault="qualified">
+	<element name="customerData">
+		<complexType>
+			<sequence>
+				<element name="age" type="int" minOccurs="1" maxOccurs="1" />
+				<element name="job" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="marital_status" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="education" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="balance" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="housing" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="loan" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="contact" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="day" type="int" minOccurs="1" maxOccurs="1" />
+				<element name="month" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="duration" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="campaign" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="previous" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="poutcome" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="deposit" type="string" minOccurs="1"
+					maxOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="customerHistoryData">
+		<complexType>
+			<sequence>
+				<element name="age" type="int" minOccurs="1" maxOccurs="1" />
+				<element name="job" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="marital_status" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="education" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="balance" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="housing" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="loan" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="contact" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="day" type="int" minOccurs="1" maxOccurs="1" />
+				<element name="month" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="duration" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="campaign" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="previous" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="poutcome" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="deposit" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="deletion_time" type="date" minOccurs="1"
+					maxOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>

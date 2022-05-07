@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Login - Produce Recognition</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<style th:inline="text">
+body {
+	background: url([[@{/images/login.jpg}]])
+}
+</style>
+<body>
+	<div class="container-fluid text-center">
+		<div>
+			<img src="/images/logo.png">
+		</div>
+		<br> <br>
+		<form th:action="@{/loginAccess}" method="POST"
+			style="max-width: 350px; margin: 0 auto;">
+
+			<div th:if="${param.error}">
+				<p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+			</div>
+
+			<div th:if="${param.logout}">
+				<p class="text-warning">You have been logged out.</p>
+			</div>
+
+			<div class="border border-secondary p-3 rounded">
+				<p>Login with Username and Password</p>
+
+				<p>
+					<input type="text" name="Username" class="form-control"
+						placeholder="Username" required autofocus />
+				</p>
+				<p>
+					<input type="password" name="password" class="form-control"
+						placeholder="Password" required />
+				</p>
+				<p>
+					<input type="submit" value="Login" class="btn btn-primary" />
+				</p>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

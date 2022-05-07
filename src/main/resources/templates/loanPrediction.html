@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Bank Predictive Analytics</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap core CSS -->
+<script th:src="@{webjars/jquery/3.5.1/jquery.js}"></script>
+<script th:src="@{webjars/bootstrap/4.5.0/js/bootstrap.js}"></script>
+<script th:src="@{/js/loanPrediction.js}"></script>
+<link th:rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.5.0/css/bootstrap.css} " />
+<script th:src="@{/js/cute-alert.js}"></script>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+</head>
+<style th:inline="text">
+body {
+	background: url([[@{/images/background1.jpg}]])
+}
+</style>
+<body>
+	<div th:replace="fragment ::html_header"></div>
+	<div class="container">
+		<br> <br> <br>
+		<nav class="navbar navbar-light rounded"
+			style="background-color: #d4dde6;">
+			<div class="col-md-15">
+				<h3>Customer Term Deposit Prediction</h3>
+				<br>
+				<form id="loanPredictionForm" name="loanPredictionForm"
+					method="post">
+					<div class="row">
+						<div class="col-md-3">
+							<label for="gender" class="control-label">Gender</label> <select
+								id="gender" class="form-control" required>
+								<option value="">Select</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="married" class="control-label">Married</label> <select
+								id="married" class="form-control" required>
+								<option value="">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="dependent" class="control-label">No of
+								Dependent</label> <input type="number" min="0" max="12" id="dependent"
+								class="form-control" required
+								oninvalid="setCustomValidity('No of Dependent 0–15')"
+								oninput="setCustomValidity('')" />
+						</div>
+						<div class="col-md-3">
+							<label for="education" class="control-label">Is
+								Graduated?</label> <select id="education" class="form-control" required>
+								<option value="">Select</option>
+								<option value="Graduate">Yes</option>
+								<option value="Not Graduate">No</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="selfEmployed" class="control-label">Self
+								Employed</label> <select id="selfEmployed" class="form-control" required>
+								<option value="">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="creditHistory" class="control-label">Has
+								Credit History?</label> <select id="creditHistory" class="form-control"
+								required>
+								<option value="">Select</option>
+								<option value="1">Yes</option>
+								<option value="0">No</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="loanAmount" class="control-label">Loan
+								Amounts(in $1000K)</label> <input type="number" min="0" max="1000"
+								id="loanAmount" class="form-control" required
+								oninvalid="setCustomValidity('Income Range $1K–$1000K')"
+								oninput="setCustomValidity('')" />
+						</div>
+						<div class="col-md-3">
+							<label for="propertyArea" class="control-label">Locality</label>
+							<select id="propertyArea" class="form-control" required>
+								<option value="">Select</option>
+								<option value="Urban">Urban</option>
+								<option value="Rural">Rural</option>
+								<option value="Semiurban">Semi-Urban</option>
+							</select>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+
+						<div class="col-md-3">
+							<label for="applicantIncome" class="control-label">Applicant
+								Income(Per Month)</label> <input type="number" min="0" max="20000"
+								id="applicantIncome" class="form-control" required
+								oninvalid="setCustomValidity('Income Range $0–$20000')"
+								oninput="setCustomValidity('')" />
+						</div>
+						<div class="col-md-3">
+							<label for="coApplicantIncome" class="control-label">Co-Applicant
+								Income(Per Month)</label> <input type="number" min="0" max="20000"
+								id="coApplicantIncome" class="form-control" required
+								oninvalid="setCustomValidity('Income Range $0–$20000')"
+								oninput="setCustomValidity('')" />
+						</div>
+						<div class="col-md-3">
+							<label for="loanAmountTerm" class="control-label">Loan
+								Term(In Months)</label> <input type="number" min="12" max="480"
+								id="loanAmountTerm" class="form-control" required
+								oninvalid="setCustomValidity('Loan Terms in months : 12 – 480')"
+								oninput="setCustomValidity('')" />
+						</div>
+
+					</div>
+					<br> <br>
+					<div class="row">
+						<div class="col text-center">
+							<button type="submit" class="btn btn-success">Submit</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</nav>
+	</div>
+	<div id="loaderDiv"
+		style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.75) url(images/wait.gif) no-repeat center center; z-index: 10000;">
+	</div>
+	<script>
+		document.onreadystatechange = function() {
+			if (document.readyState !== "complete") {
+				document.querySelector("body").style.visibility = "hidden";
+				document.querySelector("#loader").style.visibility = "visible";
+			} else {
+				document.querySelector("#loader").style.display = "none";
+				document.querySelector("body").style.visibility = "visible";
+			}
+		};
+	</script>
+</body>
+</html>

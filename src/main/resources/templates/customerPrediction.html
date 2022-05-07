@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Bank Predictive Analytics</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap core CSS -->
+<script th:src="@{webjars/jquery/3.5.1/jquery.js}"></script>
+<script th:src="@{webjars/bootstrap/4.5.0/js/bootstrap.js}"></script>
+<script th:src="@{/js/customerPrediction.js}"></script>
+<link th:rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.5.0/css/bootstrap.css} " />
+<script  th:src="@{/js/cute-alert.js}"></script>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+</head>
+<style th:inline="text">
+body {
+	background: url([[@{/images/background1.jpg}]])
+}
+</style>
+<body>
+	<div th:replace="fragment ::html_header"></div>
+	<div class="container">
+		<br> <br> <br>
+		<nav class="navbar navbar-light rounded"
+			style="background-color: #d4dde6;">
+			<div class="col-md-15">
+				<h3>Customer Term Deposit Prediction</h3>
+				<br>
+				<form id="customerPredictionForm" name="customerPredictionForm"
+					method="post">
+					<div class="row">
+						<div class="col-md-3">
+							<label for="age" class="control-label">Age</label> <input
+								type="number" min="18" max="95" id="age" class="form-control"
+								required oninvalid="setCustomValidity('Ages 18–95')"
+								oninput="setCustomValidity('')" />
+						</div>
+						<div class="col-md-3">
+							<label for="marital_status" class="control-label">Marital
+								Status</label> <select id="marital_status" class="form-control" required>
+								<option value="">Select</option>
+								<option value="married">Married</option>
+								<option value="single">Single</option>
+								<option value="divorced">Divorced</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="education" class="control-label">Education
+								Background</label> <select id="education" class="form-control" required>
+								<option value="">Select</option>
+								<option value="primary">Primary</option>
+								<option value="secondary">Secondary</option>
+								<option value="tertiary">Tertiary</option>
+								<option value="education unknown">Unknown</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="job" class="control-label">Occupation</label> <select
+								id="job" class="form-control" required>
+								<option value="">Select</option>
+								<option value="management">Management</option>
+								<option value="technician">Technician</option>
+								<option value="entrepreneur">Entrepreneur</option>
+								<option value="blue-collar">Blue Collar</option>
+								<option value="retired">Retired</option>
+								<option value="admin">Admin</option>
+								<option value="services">Services</option>
+								<option value="self-employed">Self Employed</option>
+								<option value="unemployed">Unemployed</option>
+								<option value="housemaid">House Maid</option>
+								<option value="student">Student</option>
+								<option value="job unknown">Unknown</option>
+							</select>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-3">
+							<label for="contact" class="control-label">Contact
+								Communication Type</label> <select id="contact" class="form-control"
+								required>
+								<option value="">Select</option>
+								<option value="cellular">Cellular</option>
+								<option value="telephone">Telephone</option>
+								<option value="unknown">Unknown</option>
+							</select>
+						</div>
+
+						<div class="col-md-3">
+							<label for="day" class="control-label">Date Contacted(1st
+								- 31st)</label> <input type="number" min="1" max="31" id="day"
+								class="form-control" required
+								oninvalid="setCustomValidity('Date 1st - 31st')"
+								oninput="setCustomValidity('')" />
+						</div>
+						<div class="col-md-3">
+							<label for="month" class="control-label">Last Contacted
+								(Month)</label> <select id="month" class="form-control" required>
+								<option value="">Select</option>
+								<option value="jan">Jan</option>
+								<option value="feb">Feb</option>
+								<option value="mar">Mar</option>
+								<option value="apr">Apr</option>
+								<option value="may">May</option>
+								<option value="jun">Jun</option>
+								<option value="jul">Jul</option>
+								<option value="aug">Aug</option>
+								<option value="sep">Sep</option>
+								<option value="oct">Oct</option>
+								<option value="nov">Nov</option>
+								<option value="dec">Dec</option>
+							</select>
+						</div>
+
+						<div class="col-md-3">
+							<label for="duration" class="control-label">Last Contact
+								Duration (seconds)</label> <input type="number" min="0" max="4918"
+								id="duration" class="form-control" required
+								oninvalid="setCustomValidity('Duration range(in seconds) 0 - 4918')"
+								oninput="setCustomValidity('')" />
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-3">
+							<label for="campaign" class="control-label">No of time
+								Customer contacted(During Campaign)</label> <input type="number" min="1"
+								max="33" id="campaign" class="form-control" required
+								oninvalid="setCustomValidity('Between 1-33 times')"
+								oninput="setCustomValidity('')" />
+						</div>
+
+						<div class="col-md-3">
+							<label for="previous" class="control-label">No of time
+								Customer contacted(Before Campaign)</label> <input type="number" min="0"
+								max="275" id="previous" class="form-control" required
+								oninvalid="setCustomValidity('Between 0-275 times')"
+								oninput="setCustomValidity('')" />
+						</div>
+
+						<div class="col-md-3">
+							<label for="poutcome" class="control-label">Previous
+								Marketing Campaign Output </label> <select id="poutcome"
+								class="form-control" required>
+								<option value="">Select</option>
+								<option value="success">Success</option>
+								<option value="failure">Failure</option>
+								<option value="other">Other</option>
+								<option value="unknown">Unknown</option>
+							</select>
+						</div>
+
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-3">
+							<label for="housing" class="control-label">Has Housing
+								Loan </label> <select id="housing" class="form-control" required>
+								<option value="">Select</option>
+								<option value="1">Yes</option>
+								<option value="2">No</option>
+							</select>
+						</div>
+
+						<div class="col-md-3">
+							<label for=loan class="control-label">Has Personal Loan </label>
+							<select id="loan" class="form-control" required>
+								<option value="">Select</option>
+								<option value="1">Yes</option>
+								<option value="2">No</option>
+							</select>
+						</div>
+
+
+						<div class="col-md-3">
+							<label for="balance" class="control-label">Balance in
+								Individual Account</label> <input type="number" min="-8019" max="102127"
+								id="balance" class="form-control" required
+								oninvalid="setCustomValidity('Between -8019 and 102127')"
+								oninput="setCustomValidity('')" />
+						</div>
+					</div>
+
+					<br>
+					<div class="row">
+						<div class="col text-center">
+							<button type="submit" class="btn btn-success">Submit</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</nav>
+	</div>
+	<div id="loaderDiv"
+		style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.75) url(images/wait.gif) no-repeat center center; z-index: 10000;">
+	</div>
+	<script>
+		document.onreadystatechange = function() {
+			if (document.readyState !== "complete") {
+				document.querySelector("body").style.visibility = "hidden";
+				document.querySelector("#loader").style.visibility = "visible";
+			} else {
+				document.querySelector("#loader").style.display = "none";
+				document.querySelector("body").style.visibility = "visible";
+			}
+		};
+	</script>
+</body>
+</html>

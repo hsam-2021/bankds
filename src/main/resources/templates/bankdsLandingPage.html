@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Bank Predictive Analytics</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap core CSS -->
+<script th:src="@{webjars/jquery/3.5.1/jquery.js}"></script>
+<script th:src="@{webjars/bootstrap/4.5.0/js/bootstrap.js}"></script>
+<link th:rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.5.0/css/bootstrap.css} " />
+<link th:rel="stylesheet" th:href="@{/css/bankprediction.css} " />
+
+</head>
+<style th:inline="text">
+body {
+	background: url([[@{/images/background1.jpg}]])
+}
+</style>
+<body>
+	<div th:replace="fragment ::html_header"></div>
+
+	<div class="container">
+		<br> <br> <br> <br> <br> <br>
+		<nav class="navbar navbar-light rounded">
+			<form th:action="@{/customerData}" id="customerDataPrediction"
+				name="customerDataPrediction" method="post">
+				<div class="card-deck" style="width: 100%;">
+
+					<div class="card p-2">
+						<ul class="price">
+							<li class="header">Term Deposit Prediction</li>
+							<li class="grey">Predict if the client will subscribe to a
+								term deposit based on the bank marketing analysis</li>
+							<li class="grey"><a href="#"
+								th:href="@{/customerPrediction}" class="btn btn-dark">Go</a></li>
+						</ul>
+					</div>
+
+					<div class="card p-2">
+						<ul class="price">
+							<li class="header">Loan Approval Prediction</li>
+							<li class="grey">Predict if the loan get approved or reject
+								based on different segments of Client data</li>
+							<li class="grey"><a href="#" th:href="@{/loanPrediction}"
+								class="btn btn-dark">Go</a></li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</nav>
+	</div>
+	<div id="loaderDiv"
+		style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.75) url(images/wait.gif) no-repeat center center; z-index: 10000;">
+	</div>
+	<script>
+		document.onreadystatechange = function() {
+			if (document.readyState !== "complete") {
+				document.querySelector("body").style.visibility = "hidden";
+				document.querySelector("#loader").style.visibility = "visible";
+			} else {
+				document.querySelector("#loader").style.display = "none";
+				document.querySelector("body").style.visibility = "visible";
+			}
+		};
+	</script>
+</body>
+</html>

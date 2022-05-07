@@ -1,0 +1,73 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.zebra.com/pm/domainobjects/services"
+	xmlns:tns="http://www.zebra.com/pm/domainobjects/services"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" jaxb:version="2.0"
+	elementFormDefault="qualified">
+	<element name="loanData">
+		<complexType>
+			<sequence>
+				<element name="gender" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="married" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="dependent" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="education" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="selfEmployed" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="creditHistory" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="propertyArea" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="applicantIncome" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="coApplicantIncome" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="loanAmount" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="loanAmountTerm" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="loanStatus" type="string" minOccurs="1"
+					maxOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="loanHistoryData">
+		<complexType>
+			<sequence>
+				<element name="gender" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="married" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="dependent" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="education" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="selfEmployed" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="creditHistory" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="propertyArea" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="applicantIncome" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="coApplicantIncome" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="loanAmount" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="loanAmountTerm" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="loanStatus" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="deletion_time" type="date" minOccurs="1"
+					maxOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+
+
+
+
+</schema>
