@@ -1,0 +1,21 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.zebra.com/pm/domainobjects/services"
+	xmlns:tns="http://www.zebra.com/pm/domainobjects/services"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" jaxb:version="2.0"
+	elementFormDefault="qualified">
+	<element name="customerDeletedData">
+		<complexType>
+			<sequence>
+				<element name="custId" type="int" minOccurs="1" maxOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="loanDeletedData">
+		<complexType>
+			<sequence>
+					<element name="loanId" type="int" minOccurs="1" maxOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>

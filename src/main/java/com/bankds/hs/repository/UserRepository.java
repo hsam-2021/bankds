@@ -23,6 +23,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	@Query("select id from User where username =:userName ")
 	long findUserId(@Param("userName") String userName);
 	
+	@Query("select password from User where id =:id ")
+	String getPassword(@Param("id") long id);
+	
 	@Query("select count(*) from User where username =:userName and id =:id")
 	int countExistingUserNameForUpdate(@Param("userName") String userName,@Param("id") Long id);
 	

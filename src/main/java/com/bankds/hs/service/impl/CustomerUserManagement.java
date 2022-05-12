@@ -128,7 +128,11 @@ public class CustomerUserManagement implements ICustomerUserManagement {
 		user.setId(updateUserAccount.getId());
 		user.setName(updateUserAccount.getName());
 		user.setUsername(updateUserAccount.getUsername());
-		user.setPassword(encoder.encode(updateUserAccount.getPassword()));
+		if ((userRepository.getPassword(updateUserAccount.getId()).equals(updateUserAccount.getPassword()))) {
+			user.setPassword(updateUserAccount.getPassword());
+		} else {
+			user.setPassword(encoder.encode(updateUserAccount.getPassword()));
+		}
 		user.setEmail(updateUserAccount.getEmail());
 
 		Set<String> strRoles = updateUserAccount.getRole();

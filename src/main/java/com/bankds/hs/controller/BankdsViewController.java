@@ -66,4 +66,52 @@ public class BankdsViewController {
 		return model;
 	}
 
+	@RequestMapping(path = "/customerData", method = RequestMethod.GET)
+	public ModelAndView customerData() {
+		ModelAndView model = new ModelAndView();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+			model.setViewName("loginAccess");
+		} else {
+			model.setViewName("customerData");
+		}
+		return model;
+	}
+
+	@RequestMapping(path = "/loanData", method = RequestMethod.GET)
+	public ModelAndView loanData() {
+		ModelAndView model = new ModelAndView();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+			model.setViewName("loginAccess");
+		} else {
+			model.setViewName("loanData");
+		}
+		return model;
+	}
+
+	@RequestMapping(path = "/customerHistoryData", method = RequestMethod.GET)
+	public ModelAndView customerHistoryData() {
+		ModelAndView model = new ModelAndView();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+			model.setViewName("loginAccess");
+		} else {
+			model.setViewName("customerHistoryData");
+		}
+		return model;
+	}
+
+	@RequestMapping(path = "/loanHistoryData", method = RequestMethod.GET)
+	public ModelAndView loanHistoryData() {
+		ModelAndView model = new ModelAndView();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+			model.setViewName("loginAccess");
+		} else {
+			model.setViewName("loanHistoryData");
+		}
+		return model;
+	}
+
 }
