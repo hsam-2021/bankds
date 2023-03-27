@@ -22,13 +22,16 @@ Integrated Development Environment (IDE):
 
   -	Jupyter Notebook
   - PyCharm
+  - 
 Programming languages:
 
   - Python 3.10
+  - 
 Programming Frameworks:
 
   -	TensorFlow
   - Flask
+  - 
 Libraries:
   -	NumPy
   -	Pandas
@@ -37,33 +40,46 @@ Libraries:
   -	Sklearn
   -	Json
   -	pickle
+  -	
 API testing tool:
   -	Postman
+  -	
 Data visualization tool:
   -	Tableau
-Web development part/ Back end
+  -	
+### Web development part/ Back end
+
 Database:
   -	Postgres
+  -	
 User Interface:
   -	HTML5
   -	JavaScript (Ajax, jQuery)
   -	Bootstrap 4 for styling and scripting
   -	Datatable library for interactive tables
+  -	
 Programming language:
   -	Java 8
+  -	
 IDE:
   -	Spring Tool Suite (STS)
+  -	
 Template engine:
   -	Thymeleaf for server-side template engine
+  -	
 Frameworks:
   -	Java Persistence API (Hibernate) as Object Relational Mapping (ORM) tool
   -	Springboot
+  -	
 API:
   -	Rest API for CRUD operations
+  -	
 Application and Web server:
   -	Tomcat
+  -	
 Container:
   -	Docker
+  -	
 Cloud platform:
   -	Google cloud platform
 
