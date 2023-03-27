@@ -21,47 +21,47 @@ Platform:
 Integrated Development Environment (IDE):
 
   -	Jupyter Notebook
-  -PyCharm
+  - PyCharm
 Programming languages:
 
   - Python 3.10
 Programming Frameworks:
 
   -	TensorFlow
-  -Flask
+  - Flask
 Libraries:
-  •	NumPy
-  •	Pandas
-  •	Matplotlib
-  •	Seaborn
-  •	Sklearn
-  •	Json
-   •	pickle
+  -	NumPy
+  -	Pandas
+  -	Matplotlib
+  -	Seaborn
+  -	Sklearn
+  -	Json
+  -	pickle
 API testing tool:
-  •	Postman
+  -	Postman
 Data visualization tool:
-  •	Tableau
+  -	Tableau
 Web development part/ Back end
 Database:
-  •	Postgres
+  -	Postgres
 User Interface:
-  •	HTML5
-  •	JavaScript (Ajax, jQuery)
-  •	Bootstrap 4 for styling and scripting
-  •	Datatable library for interactive tables
+  -	HTML5
+  -	JavaScript (Ajax, jQuery)
+  -	Bootstrap 4 for styling and scripting
+  -	Datatable library for interactive tables
 Programming language:
-  •	Java 8
+  -	Java 8
 IDE:
-  •	Spring Tool Suite (STS)
+  -	Spring Tool Suite (STS)
 Template engine:
-  •	Thymeleaf for server-side template engine
+  -	Thymeleaf for server-side template engine
 Frameworks:
-  •	Java Persistence API (Hibernate) as Object Relational Mapping (ORM) tool
-  •	Springboot
+  -	Java Persistence API (Hibernate) as Object Relational Mapping (ORM) tool
+  -	Springboot
 API:
-  •	Rest API for CRUD operations
+  -	Rest API for CRUD operations
 Application and Web server:
-  •	Tomcat
+  -	Tomcat
 Container:
   1.	Docker
 Cloud platform:
