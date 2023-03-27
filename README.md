@@ -104,6 +104,9 @@ Another predictive model is used to predict whether the customer loan will be ap
 ![image](https://user-images.githubusercontent.com/94940146/228032520-1e7573dd-9ea1-4477-8c87-a386713fa39e.png)
 
 
+## Future scope
+
+In this project I have tried to mimic a real time application scenario of buiding a predictive model based on the bank data and utilizing it for for making impactful business decision. However, this project can be expanded and more functionalities can be added which would add more feature. Some examples are targeting potential customer section using KNN algorithm. This is a really interesting field and more and more we explore this we can develop more and more interesting and useful applications.
 
 
 
