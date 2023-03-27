@@ -14,7 +14,8 @@ Recent advances in data analytics and machine learning are providing banks with 
 8. Launch the web page http://<host_id:8080> 
 
 ## Tool and Technologies used
-Machine learning part
+
+**Machine learning part**
 Platform:
   -	Operating system: Windows 10
   
