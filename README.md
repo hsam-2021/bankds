@@ -1,5 +1,8 @@
 # Predictive Analysis - Web UI
 
+## Abstract
+Recent advances in data analytics and machine learning are providing banks with powerful new tools for gaining insights into their customers’ needs and behavior. Through the use of advanced predictive and prescriptive analytics, banks are applying technology in ways that can have a direct and tangible impact on their ability to access and apply useful business intelligence capabilities. The potential benefits of these sweeping new advances can be seen in a variety of areas, including enhanced anticipation and prediction of possible customer churn, improved effectiveness of cross-selling and marketing activities etc. Today business decisions are based on data. The data should be of high quality to help make best decisions. My data science project is about analysis and prediction based on bank dataset which is utilized to understand the customer behavior whether the customer will subscribe for term deposit or not. Also based on the customer data it can be predicted whether a particular customer should be given a loan or not. The accuracy for my model is high and as more and more data are being collected and fed to the model it will improve with time and give better predictions.
+
 ##  Steps for project set up
 1. git clone https://github.com/hsam-2021/bankds.git
 2. Set up Docker for Linux following the instruction in link https://docs.docker.com/engine/install/ubuntu/
@@ -13,52 +16,52 @@
 ## Tool and Technologies used
 Machine learning part
 Platform:
-•	Operating system: Windows 10
+  •	Operating system: Windows 10
 Integrated Development Environment (IDE):
-•	Jupyter Notebook
-•	PyCharm
+  •	Jupyter Notebook
+  •	PyCharm
 Programming languages:
-•	Python 3.10
+  •	Python 3.10
 Programming Frameworks:
-•	TensorFlow
-•	Flask
+  •	TensorFlow
+  •	Flask
 Libraries:
-•	NumPy
-•	Pandas
-•	Matplotlib
-•	Seaborn
-•	Sklearn
-•	Json
-•	pickle
+  •	NumPy
+  •	Pandas
+  •	Matplotlib
+  •	Seaborn
+  •	Sklearn
+  •	Json
+   •	pickle
 API testing tool:
-•	Postman
+  •	Postman
 Data visualization tool:
-•	Tableau
+  •	Tableau
 Web development part/ Back end
 Database:
-•	Postgres
+  •	Postgres
 User Interface:
-•	HTML5
-•	JavaScript (Ajax, jQuery)
-•	Bootstrap 4 for styling and scripting
-•	Datatable library for interactive tables
+  •	HTML5
+  •	JavaScript (Ajax, jQuery)
+  •	Bootstrap 4 for styling and scripting
+  •	Datatable library for interactive tables
 Programming language:
-•	Java 8
+  •	Java 8
 IDE:
-•	Spring Tool Suite (STS)
+  •	Spring Tool Suite (STS)
 Template engine:
-•	Thymeleaf for server-side template engine
+  •	Thymeleaf for server-side template engine
 Frameworks:
-•	Java Persistence API (Hibernate) as Object Relational Mapping (ORM) tool
-•	Springboot
+  •	Java Persistence API (Hibernate) as Object Relational Mapping (ORM) tool
+  •	Springboot
 API:
-•	Rest API for CRUD operations
+  •	Rest API for CRUD operations
 Application and Web server:
-•	Tomcat
+  •	Tomcat
 Container:
-1.	Docker
+  1.	Docker
 Cloud platform:
-2.	Google cloud platform
+  2.	Google cloud platform
 
 
 ## Project Milestones
