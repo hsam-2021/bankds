@@ -16,20 +16,19 @@ Recent advances in data analytics and machine learning are providing banks with 
 ## Tool and Technologies used
 Machine learning part
 Platform:
-
-  •	Operating system: Windows 10
+  -	Operating system: Windows 10
   
 Integrated Development Environment (IDE):
 
-  •	Jupyter Notebook
-  •	PyCharm
+  -	Jupyter Notebook
+  -PyCharm
 Programming languages:
 
-  •	Python 3.10
+  - Python 3.10
 Programming Frameworks:
 
-  •	TensorFlow
-  •	Flask
+  -	TensorFlow
+  -Flask
 Libraries:
   •	NumPy
   •	Pandas
