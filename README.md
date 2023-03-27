@@ -15,24 +15,24 @@ Recent advances in data analytics and machine learning are providing banks with 
 
 ## Tool and Technologies used
 
-**Machine learning part Platform:
+**Machine learning part Platform:**
   -	Operating system: Windows 10
   
-Integrated Development Environment (IDE):
+**Integrated Development Environment (IDE):**
 
   -	Jupyter Notebook
   - PyCharm
   
-Programming languages:
+**Programming languages:**
 
   - Python 3.10
    
-Programming Frameworks:
+**Programming Frameworks:**
 
   -	TensorFlow
   - Flask
  
-Libraries:
+**Libraries:**
   -	NumPy
   -	Pandas
   -	Matplotlib
@@ -41,46 +41,46 @@ Libraries:
   -	Json
   -	pickle
   
-API testing tool:
+**API testing tool:**
   -	Postman
   
-Data visualization tool:
+**Data visualization tool:**
   -	Tableau
  
 ### Web development part/ Back end
 
-Database:
+**Database:**
   -	Postgres
  
-User Interface:
+**User Interface:**
   -	HTML5
   -	JavaScript (Ajax, jQuery)
   -	Bootstrap 4 for styling and scripting
   -	Datatable library for interactive tables
-  -	
-Programming language:
+  
+**Programming language:**
   -	Java 8
-  -	
-IDE:
+  	
+**IDE:**
   -	Spring Tool Suite (STS)
   	
-Template engine:
+**Template engine:**
   -	Thymeleaf for server-side template engine
   	
-Frameworks:
+**Frameworks:**
   -	Java Persistence API (Hibernate) as Object Relational Mapping (ORM) tool
   -	Springboot
   	
-API:
+**API:**
   -	Rest API for CRUD operations
   	
-Application and Web server:
+**Application and Web server:**
   -	Tomcat
   -	
-Container:
+**Container:**
   -	Docker
   
-Cloud platform:
+**Cloud platform:**
   -	Google cloud platform
 
 
