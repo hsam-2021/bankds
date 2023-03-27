@@ -63,9 +63,9 @@ API:
 Application and Web server:
   -	Tomcat
 Container:
-  1.	Docker
+  -	Docker
 Cloud platform:
-  2.	Google cloud platform
+  -	Google cloud platform
 
 
 ## Project Milestones
